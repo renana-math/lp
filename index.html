@@ -79,7 +79,7 @@
   .intro{
     background:#fff;border:1.5px solid var(--line);
     border-radius:26px 70px 70px 26px;
-    padding:26px 120px 26px 40px;
+    padding:26px 140px 26px 36px;
     font-size:21.5px;font-weight:500;color:var(--navy);line-height:1.55;
     box-shadow:0 6px 18px rgba(28,43,74,.06);
   }
@@ -177,14 +177,52 @@
   .num{direction:ltr;unicode-bidi:embed;}
 
   @media (max-width:700px){
-    .cols{grid-template-columns:1fr;}
-    .mega{font-size:64px;}
-    .mega-oneline{font-size:34px;}
-    .arch{width:78vw;height:60vw;}
-    .intro{border-radius:26px;padding:96px 28px 24px;}
-    .intro-badge{top:-4px;left:50%;transform:translate(-50%,0) scale(.85);}
-    .footer{padding:20px 20px 24px;border-radius:26px;}
-    .f-chip{font-size:15px;padding:10px 16px;}
+    .page{width:100%;margin:0;}
+
+    /* hide side doodles that collide with content on narrow screens */
+    .d-parabola,.d-eq1,.d-sqrt,.d-eq2,.d-dots,.d-calc,.d-ruler{display:none;}
+
+    /* hero */
+    .arch{width:88vw;height:66vw;border-width:4px;}
+
+    /* titles: fluid sizing, keep on one line as long as possible */
+    .titles{margin-top:24px;padding:0 16px;}
+    .mega-oneline{font-size:clamp(26px,8.2vw,40px);gap:10px;}
+    .mega-oneline::before,.mega-oneline::after{width:18px;height:3px;}
+    .mega-underline{width:140px;margin-top:10px;}
+    .navy-line{font-size:clamp(17px,5vw,22px);gap:10px;margin-top:14px;}
+
+    /* intro pill: badge moves above the card, text gets full width */
+    .intro-wrap{margin:56px 16px 0;}
+    .intro{
+      border-radius:22px;
+      padding:64px 20px 20px;
+      font-size:17.5px;text-align:center;
+    }
+    .intro-badge{
+      top:-44px;right:50%;transform:translate(50%,0);
+      width:84px;height:84px;
+    }
+    .intro-badge svg{width:38px;height:38px;}
+
+    /* columns stack full-width */
+    .cols{grid-template-columns:1fr;gap:26px;padding:28px 16px 20px;}
+    .col-head{font-size:20px;padding:11px 56px 11px 20px;}
+    .col-head .head-ico{width:44px;height:44px;}
+    .col-head .head-ico svg{width:22px;height:22px;}
+    .benefits,.about-card{padding:4px 18px;}
+    .benefit{padding:13px 0;}
+    .benefit p{font-size:16.5px;}
+    .about-item{padding:13px 0;}
+    .about-item p{font-size:16px;}
+    .a-ico{flex:0 0 48px;width:48px;height:48px;}
+    .a-ico svg{width:24px;height:24px;}
+
+    /* footer: stack chips, full width */
+    .footer{margin:8px 12px 16px;padding:18px 16px 20px;border-radius:24px;gap:12px;}
+    .footer .f-title{font-size:19px;}
+    .f-chips{flex-direction:column;width:100%;gap:10px;}
+    .f-chip{width:100%;justify-content:center;font-size:16px;padding:12px 16px;}
   }
 </style>
 </head>
