@@ -185,11 +185,15 @@
     /* hero */
     .arch{width:88vw;height:66vw;border-width:4px;}
 
-    /* titles: fluid sizing, keep on one line as long as possible */
-    .titles{margin-top:24px;padding:0 16px;}
-    .mega-oneline{font-size:clamp(26px,8.2vw,40px);gap:10px;}
-    .mega-oneline::before,.mega-oneline::after{width:18px;height:3px;}
-    .mega-underline{width:140px;margin-top:10px;}
+    /* titles: fluid sizing, drop side dashes (they orphan "UK"), wrap as plain centered text */
+    .titles{margin-top:24px;padding:0 20px;}
+    .mega-oneline{
+      display:block;flex-wrap:unset;
+      font-size:clamp(23px,7.4vw,34px);
+      line-height:1.35;white-space:normal;
+    }
+    .mega-oneline::before,.mega-oneline::after{content:none;}
+    .mega-underline{width:120px;margin-top:12px;}
     .navy-line{font-size:clamp(17px,5vw,22px);gap:10px;margin-top:14px;}
 
     /* intro pill: badge moves above the card, text gets full width */
